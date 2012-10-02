@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Backbone.js Blog Engine</title>
+	<link rel="stylesheet" href="bootstrap.min.css" />
+</head>
+
+<body>
+
+<h1>My Backbone Blog Engine</h1>
+<br />
+
+<div id="posts">
+<table>
+	<tr>
+		<td id="left">
+			<form id="newPost">
+				Title:<br /><input id="title" name="title" /><br />
+				Content:<br /></label><textarea cols="50" rows="10" id="content" name="content"></textarea><br />
+				<input type="submit" value="Save" />
+			</form>
+		</td>
+		<td id="right">
+			<div id="postsContainer"></div>
+		</td>
+	</tr>
+</table>
+</div>
+
+<button id="saveAll" onClick="saveAllToDb()">Save all to disk</button>
+
+<script type="text/template" id="editPostTemplate">
+<form id="editPost">
+	Title:<input id="editTitle" /><br />
+	Content:<textarea cols="50" rows="3" id="editContent" /><br />
+	<button id="editSave">Save</button>
+</form>
+</script>
+
+<script type="text/template" id="postTemplate">
+	<h3><%= title %></h3>
+	<p><%= content %></p>
+	<div class="time"><%= time %></div><br />
+	<button id="delete">Delete this post</button><button id="edit">Edit this post</button>
+	<hr />
+</script>
+
+<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
+<script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+<script src="https://raw.github.com/jeromegn/Backbone.localStorage/master/backbone.localStorage.js"></script>
+<script src="https://raw.github.com/derickbailey/backbone.syphon/master/lib/backbone.syphon.min.js"></script>
+<!-- Finally, I call my own self-made .js file that will make my app run -->
+<script src="blog.js"></script>
+<!-- <script src="bootstrap.min.js"></script> -->
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+html {
+	background-color: beige;
+	font-family: Garamond;
+	padding: 50px;
+	color: black;
+	list-style: none;
+}
+
+#sidebar {
+	float: right;
+}
+
+#left {
+	width: 500px;
+	position: relative;
+}
+
+#right {
+	position: relative;
+	
+}
