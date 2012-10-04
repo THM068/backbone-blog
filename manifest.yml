@@ -1,0 +1,14 @@
+--- 
+applications: 
+  .: 
+    framework: 
+      name: php
+      info: 
+        exec: 
+        description: PHP Application
+        mem: 128M
+    mem: 128M
+    instances: 1
+    url: backbone-blog.hp.af.cm
+    name: backbone-blog
+    infra: hp

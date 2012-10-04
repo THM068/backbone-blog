@@ -22,7 +22,7 @@ window.Blog = Backbone.Collection.extend({
 //Here's where I specify how specific posts will be rendered in the view
 window.PostView = Backbone.View.extend({
 	// Every time a post is rendered, a new DOM element called 'post' will be rendered
-    tagName: "post",
+    tagName: "div",
 
     // Here, I'm using Underscore and jQuery to specify which template I'll be extracting from the .html page to render specific posts
 	template: _.template($('#postTemplate').html()),
@@ -150,7 +150,3 @@ window.BlogView = Backbone.View.extend({
 var blogView = new BlogView();
 
 }(jQuery));
-
-function saveAllToDb(){
-
-}

@@ -17,9 +17,13 @@
 		<td id="left">
 			<form id="newPost">
 				Title:<br /><input id="title" name="title" /><br />
-				Content:<br /></label><textarea cols="50" rows="10" id="content" name="content"></textarea><br />
+				Content:<br /></label><textarea cols="80" rows="10" id="content" name="content"></textarea><br />
 				<input type="submit" value="Save" />
 			</form>
+			
+			<br />
+
+			<p class="caption">Remember: HTML tags are allowed!</p>
 		</td>
 		<td id="right">
 			<div id="postsContainer"></div>
@@ -28,7 +32,7 @@
 </table>
 </div>
 
-<button id="saveAll" onClick="saveAllToDb()">Save all to disk</button>
+<!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
 
 <script type="text/template" id="editPostTemplate">
 <form id="editPost">
@@ -39,10 +43,12 @@
 </script>
 
 <script type="text/template" id="postTemplate">
+	<div class="post">
 	<h3><%= title %></h3>
 	<p><%= content %></p>
 	<div class="time"><%= time %></div><br />
 	<button id="delete">Delete this post</button><button id="edit">Edit this post</button>
+	</div>
 	<hr />
 </script>
 
@@ -56,7 +62,6 @@
 <!-- Finally, I call my own self-made .js file that will make my app run -->
 <script src="blog.js"></script>
 <!-- <script src="bootstrap.min.js"></script> -->
-
 
 </body>
 </html>
