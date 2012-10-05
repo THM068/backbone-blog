@@ -130,8 +130,7 @@ window.BlogView = Backbone.View.extend({
 
         // Note the if/else construct. If the title or content of the new post is empty, then an alerty will be triggered
     	if ($('#title').val() && $('#content').val()){
-            var timeNow = new Date();
-    	    var newPost = new Post({ title: $('#title').val(), content: $('#content').val(), time: timeNow });
+    	    var newPost = new Post({ title: $('#title').val(), content: $('#content').val(), time: new Date() });
     	    this.collection.add(newPost);
     	} else {
     	    alert("Try again! Your post must have a title and content.");
