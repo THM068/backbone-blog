@@ -16,8 +16,8 @@
 	<tr>
 		<td id="left">
 			<form id="newPost">
-				Title:<br /><input id="title" name="title" /><br />
-				Content:<br /></label><textarea cols="80" rows="10" id="content" name="content"></textarea><br />
+				Title:<br /><input id="title" name="title" /><br /><br />
+				Content:<br /></label><textarea cols="200" rows="10" id="content" name="content"></textarea><br />
 				<input type="submit" value="Save" />
 			</form>
 			
@@ -34,7 +34,7 @@
 
 <!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
 
-<script type="text/template" id="editPostTemplate">
+<!-- <script type="text/template" id="editPostTemplate">
 <form id="editPost">
 	Title:<input id="editTitle" /><br />
 	Content:<textarea cols="50" rows="3" id="editContent" /><br />
@@ -42,12 +42,15 @@
 </form>
 </script>
 
+-->
+
 <script type="text/template" id="postTemplate">
 	<div class="post">
 	<h3><%= title %></h3>
+	<hr />
 	<p><%= content %></p>
 	<div class="time"><%= time %></div><br />
-	<button id="delete">Delete this post</button><button id="edit">Edit this post</button>
+	<button id="delete">Delete this post</button>
 	</div>
 	<hr />
 </script>
