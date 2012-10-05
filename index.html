@@ -18,6 +18,15 @@
 			<form id="newPost">
 				Title:<br /><input id="title" name="title" /><br /><br />
 				Content:<br /></label><textarea cols="200" rows="10" id="content" name="content"></textarea><br />
+				Current mood:<br />
+				<select id="mood">
+					<option value="happy">Happy</option>
+					<option value="sad">Sad</option>
+					<option value="gloomy">Gloomy</option>
+					<option value="optimistic">Optimistic</option>
+					<option value="scared">Scared</option>
+					<option value="other">Other</option>
+				</select>
 				<input type="submit" value="Save" />
 			</form>
 			
@@ -31,6 +40,14 @@
 	</tr>
 </table>
 </div>
+
+<h3>Background color:</h3>
+<select id="backgroundColor">
+	<option value="red">Red</option>
+	<option value="blue">Blue</option>
+	<option value="green">Green</option>
+	<option value="beige">Beige</option>
+</select>
 
 <!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
 
@@ -49,7 +66,7 @@
 	<h3><%= title %></h3>
 	<hr />
 	<p><%= content %></p>
-	<div class="time"><%= time %></div><br />
+	<p class="caption">My current mood is <strong><%= mood %></strong>.</p><div class="time"><%= time %></div><br />
 	<button id="delete">Delete this post</button>
 	</div>
 	<hr />
