@@ -3,7 +3,6 @@ body {
 	background-size: 100%;
 	font-family: Verdana;
 	padding: 50px;
-	position: absolute;
 }
 
 button {
@@ -12,12 +11,16 @@ button {
 
 #newPost {
 	margin: 0 auto;
+	float: left;
+	position: relative;
 }
 
 #postsContainer {
 	vertical-align: top;
 	float: left;
+	position: relative;
 	width: 700px;
+	padding-left: 50px;
 }
 
 .post {

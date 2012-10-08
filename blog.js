@@ -1,7 +1,5 @@
 (function($){
 
-window.monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-
 // Here is my most basic model, for blog posts.
 // Since blog posts are such basic, text-based content, this model doesn't have to be very fancy.
 // I'm more or less just specifying that each post will have a title and content 
