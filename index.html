@@ -18,15 +18,15 @@
 			<form id="newPost">
 				Title:<br /><input id="title" name="title" /><br /><br />
 				Content:<br /></label><textarea cols="200" rows="10" id="content" name="content"></textarea><br />
-				Current mood:<br />
-				<select id="mood">
-					<option value="happy">Happy</option>
-					<option value="sad">Sad</option>
-					<option value="gloomy">Gloomy</option>
-					<option value="optimistic">Optimistic</option>
-					<option value="scared">Scared</option>
-					<option value="other">Other</option>
-				</select>
+				Current mood:<br /><input id="mood" /><br /><br />
+				Background color:<br />
+								<select id="backgroundColor">
+								    <option value="white">White</option>
+								    <option value="#DDB7EF">Lavender</option>
+									<option value="#7EF1EF">Cerulean</option>
+									<option value="chartreuse">Chartreuse</option>
+									<option value="beige">Beige</option>
+								</select><br /><br />
 				<input type="submit" value="Save" />
 			</form>
 			
@@ -41,33 +41,23 @@
 </table>
 </div>
 
-<h3>Background color:</h3>
-<select id="backgroundColor">
-	<option value="red">Red</option>
-	<option value="blue">Blue</option>
-	<option value="green">Green</option>
-	<option value="beige">Beige</option>
-</select>
-
 <!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
 
-<!-- <script type="text/template" id="editPostTemplate">
+<script type="text/template" id="editPostTemplate">
 <form id="editPost">
-	Title:<input id="editTitle" /><br />
-	Content:<textarea cols="50" rows="3" id="editContent" /><br />
+	Title:<input id="editTitle" value="<%= title %>" /></input><br />
+	Content:<textarea cols="50" rows="3" id="editContent" value="<%= content %>"/><br />
 	<button id="editSave">Save</button>
 </form>
 </script>
 
--->
-
 <script type="text/template" id="postTemplate">
-	<div class="post">
+	<div class="post" style="background-color: <%= backgroundColor %>">
 	<h3><%= title %></h3>
 	<hr />
-	<p><%= content %></p>
-	<p class="caption">My current mood is <strong><%= mood %></strong>.</p><div class="time"><%= time %></div><br />
-	<button id="delete">Delete this post</button>
+	<p class="boxed"><%= content %></p>
+	<p id="mood" class="caption">My current mood is <strong><%= mood %></strong>.</p><div class="time"><%= time %></div><br />
+	<button id="delete">Delete this post</button><button id="edit">Edit this post</button>
 	</div>
 	<hr />
 </script>
