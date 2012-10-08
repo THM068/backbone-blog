@@ -1,5 +1,7 @@
 (function($){
 
+window.monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+
 // Here is my most basic model, for blog posts.
 // Since blog posts are such basic, text-based content, this model doesn't have to be very fancy.
 // I'm more or less just specifying that each post will have a title and content 
@@ -11,9 +13,7 @@ window.Post = Backbone.Model.extend({
 		title: "",
 		content: "",
         time: "",
-        mood: "neutral",
-        backgroundColor: "white",
-        pageFont: "Verdana"
+        mood: "neutral"
 	}
 });
 
@@ -132,16 +132,20 @@ window.BlogView = Backbone.View.extend({
     	e.preventDefault();
 
         // Note the if/else construct. If the title or content of the new post is empty, then an alerty will be triggered
-    	if ($('#title').val() && $('#content').val()){
+    	if ($('#title').val() && $('#content').val() && $('#mood').val()){
             var currentMood = ($('#mood').val() ? $('#mood').val() : "undefined");
+            var timeNow = new Date();
+            var date = timeNow.getDate();
+            var month = timeNow.getMonth();
+            var year = timeNow.getFullYear();
+            var formattedTime = date + "-" + month + "-" + year;
     	    var newPost = new Post({ title: $('#title').val(),
                                     content: $('#content').val(),
-                                    time: new Date(), 
-                                    mood: currentMood,
-                                    backgroundColor: $('#backgroundColor').val() });
+                                    time: formattedTime, 
+                                    mood: currentMood });
     	    this.collection.add(newPost);
     	} else {
-    	    alert("Try again! Your post must have a title and content.");
+    	    alert("Try again! Your post must have a title, content, and an associated mood.");
     	}
     },
 

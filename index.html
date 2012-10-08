@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Backbone.js Blog Engine</title>
-	<link rel="stylesheet" href="bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -12,33 +12,16 @@
 <br />
 
 <div id="posts">
-<table>
-	<tr>
-		<td id="left">
-			<form id="newPost">
-				Title:<br /><input id="title" name="title" /><br /><br />
-				Content:<br /></label><textarea cols="200" rows="10" id="content" name="content"></textarea><br />
-				Current mood:<br /><input id="mood" /><br /><br />
-				Background color:<br />
-								<select id="backgroundColor">
-								    <option value="white">White</option>
-								    <option value="#DDB7EF">Lavender</option>
-									<option value="#7EF1EF">Cerulean</option>
-									<option value="chartreuse">Chartreuse</option>
-									<option value="beige">Beige</option>
-								</select><br /><br />
-				<input type="submit" value="Save" />
-			</form>
+	<form id="newPost">
+		Title:<br /><input id="title" name="title" /><br /><br />
+		Content:<br /></label><textarea cols="50" rows="10" id="content" name="content"></textarea><br />
+		Current mood:<br /><input id="mood" /><br /><br />
+		<button>Save</button>
+	</form>
 			
-			<br />
-
-			<p class="caption">Remember: HTML tags are allowed!</p>
-		</td>
-		<td id="right">
-			<div id="postsContainer"></div>
-		</td>
-	</tr>
-</table>
+	<p class="caption">Remember: HTML tags are allowed!</p>
+	
+	<div id="postsContainer"></div>
 </div>
 
 <!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
@@ -51,15 +34,16 @@
 </form>
 </script>
 
+<!-- This is the template for each post that is added to the blog -->
+
 <script type="text/template" id="postTemplate">
-	<div class="post" style="background-color: <%= backgroundColor %>">
+<div class="post">
 	<h3><%= title %></h3>
 	<hr />
 	<p class="boxed"><%= content %></p>
 	<p id="mood" class="caption">My current mood is <strong><%= mood %></strong>.</p><div class="time"><%= time %></div><br />
 	<button id="delete">Delete this post</button><button id="edit">Edit this post</button>
-	</div>
-	<hr />
+</div>
 </script>
 
 <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>

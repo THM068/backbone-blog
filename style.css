@@ -1,0 +1,43 @@
+body {
+	background-image: url('http://www.publicdomainpictures.net/pictures/20000/velka/blurred-golden-background-11289575386nW6.jpg');
+	background-size: 100%;
+	font-family: Verdana;
+	padding: 50px;
+	position: absolute;
+}
+
+button {
+	display: block;
+}
+
+#newPost {
+	margin: 0 auto;
+}
+
+#postsContainer {
+	vertical-align: top;
+	float: left;
+	max-width: 500px;
+}
+
+.post {
+	padding: 20px;
+	border: 1px solid black;
+}
+
+.caption {
+	font-size: 10px;
+	font-style: italic;
+}
+
+button {
+
+}
+
+button:hover {
+   
+}
+
+button:active {
+
+}
