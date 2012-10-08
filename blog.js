@@ -135,10 +135,7 @@ window.BlogView = Backbone.View.extend({
     	if ($('#title').val() && $('#content').val() && $('#mood').val()){
             var currentMood = ($('#mood').val() ? $('#mood').val() : "undefined");
             var timeNow = new Date();
-            var date = timeNow.getDate();
-            var month = timeNow.getMonth();
-            var year = timeNow.getFullYear();
-            var formattedTime = date + "-" + month + "-" + year;
+            var formattedTime = timeNow.getHours() + ":" + timeNow.getMinutes() + ":" + timeNow.getSeconds() + " on " + timeNow.getDate() + "-" + timeNow.getMonth() + "-" + timeNow.getFullYear();
     	    var newPost = new Post({ title: $('#title').val(),
                                     content: $('#content').val(),
                                     time: formattedTime, 
