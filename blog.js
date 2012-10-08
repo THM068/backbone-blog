@@ -11,7 +11,8 @@ window.Post = Backbone.Model.extend({
 		title: "",
 		content: "",
         time: "",
-        mood: "neutral"
+        mood: "neutral",
+        backgroundColor: "white"
 	}
 });
 
@@ -122,7 +123,7 @@ window.BlogView = Backbone.View.extend({
     appendPost: function(newPost){
     	// Here, I create a new post view using data from the variable newPost generated below in the "addPost" function
         var newPostView = new PostView({ model: newPost });
-    	$('#postsContainer').append(newPostView.render().el);
+    	$('#postsContainer').removeAttr('visibility').append(newPostView.render().el).fadeIn(10000);
     },
 
     addPost: function(e){
@@ -140,7 +141,8 @@ window.BlogView = Backbone.View.extend({
     	    var newPost = new Post({ title: $('#title').val(),
                                     content: $('#content').val(),
                                     time: formattedTime, 
-                                    mood: currentMood });
+                                    mood: currentMood,
+                                    backgroundColor: $('#backgroundColor').val() });
     	    this.collection.add(newPost);
     	} else {
     	    alert("Try again! Your post must have a title, content, and an associated mood.");

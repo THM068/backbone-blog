@@ -13,9 +13,18 @@
 
 <div id="posts">
 	<form id="newPost">
-		Title:<br /><input id="title" name="title" /><br /><br />
-		Content:<br /></label><textarea cols="50" rows="10" id="content" name="content"></textarea><br />
-		Current mood:<br /><input id="mood" /><br /><br />
+		Title:<br /><input id="title" size="60" /><br /><br />
+		Content:<br /></label><textarea cols="60" rows="20" id="content"></textarea><br />
+		Current mood:<br /><input id="mood" size="60" /><br /><br />
+		Background color:<br />
+		<select id="backgroundColor">
+			<option value="white">White</option>
+			<option value="beige">Beige</option>
+			<option value="teal">Teal</option>
+			<option value="#FE77E7">Magenta</option>
+			<option value="#F6CAF5">Lavender</option>
+		</select><br />
+	<br />
 		<button>Save</button>
 	</form>
 	
@@ -35,10 +44,11 @@
 <!-- This is the template for each post that is added to the blog -->
 
 <script type="text/template" id="postTemplate">
-<div class="post">
+<div class="post" style="background-color: <%= backgroundColor %>">
 	<h3><%= title %></h3>
 	<hr />
 	<p class="boxed"><%= content %></p>
+	<hr />
 	<p id="mood" class="caption">My current mood is <strong><%= mood %></strong>.</p><div class="time"><%= time %></div><br />
 	<button id="delete">Delete this post</button>
 </div>
