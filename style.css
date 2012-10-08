@@ -8,6 +8,7 @@ body {
 #newPost {
 	margin: 0 auto;
 	float: left;
+	padding-right: 30px;	
 	position: relative;
 }
 
@@ -15,17 +16,29 @@ body {
 	vertical-align: top;
 	float: left;
 	position: relative;
+	max-height: 600px;
 	width: 700px;
-	padding-left: 50px;
-	padding-bottom: 50px;
+	overflow: scroll;
+}
+
+.border {
+	border: 1px solid black;
 }
 
 .post {
 	padding: 20px;
-	border: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 .caption {
 	font-size: 10px;
 	font-style: italic;
+}
+
+.saveButton {
+	font-size: 25px;
+	width: 100px;
+	height: 50px;
+	margin-left: 0px auto;
+	margin-right: 0px auto;
 }

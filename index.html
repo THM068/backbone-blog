@@ -9,7 +9,7 @@
 <body>
 
 <h1>My Backbone Blog Engine</h1>
-<p class="caption">Check out the source code <a href="https://github.com/lucperkins/backbone-blog">on GitHub</a></p>
+<p class="caption">Check out the source code on <a href="https://github.com/lucperkins/backbone-blog">GitHub</a></p>
 <br />
 
 <div id="posts">
@@ -18,15 +18,14 @@
 		Content:<br /></label><textarea cols="60" rows="20" id="content"></textarea><br />
 		Current mood:<br /><input id="mood" size="60" /><br /><br />
 		Background color:<br />
-		<select id="backgroundColor">
-			<option value="white">White</option>
-			<option value="beige">Beige</option>
-			<option value="teal">Teal</option>
-			<option value="#FE77E7">Magenta</option>
-			<option value="#F6CAF5">Lavender</option>
-		</select><br />
-	<br />
-		<button>Save</button>
+			<select id="backgroundColor">
+				<option value="white">White</option>
+				<option value="lavender">Lavender</option>
+				<option value="teal">Teal</option>
+				<option value="beige">Beige</option>
+			</select>
+		<br /><br />
+		<button class="saveButton">Save</button><br />
 	</form>
 	
 	<div id="postsContainer"></div>
@@ -64,6 +63,7 @@
 <script src="https://raw.github.com/derickbailey/backbone.syphon/master/lib/backbone.syphon.min.js"></script>
 <!-- Finally, I call my own self-made .js file that will make my app run -->
 <script src="blog.js"></script>
+<script src="farbtastic.js"></script>
 <!-- <script src="bootstrap.min.js"></script> -->
 
 </body>

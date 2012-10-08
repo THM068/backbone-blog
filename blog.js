@@ -123,12 +123,13 @@ window.BlogView = Backbone.View.extend({
     appendPost: function(newPost){
     	// Here, I create a new post view using data from the variable newPost generated below in the "addPost" function
         var newPostView = new PostView({ model: newPost });
-    	$('#postsContainer').removeAttr('visibility').append(newPostView.render().el).fadeIn(10000);
+    	$('#postsContainer').prepend(newPostView.render().el);
     },
 
     addPost: function(e){
         //If you don't prevent the default action, then you will click "save" and nothing will happen!
     	e.preventDefault();
+        $('#postsContainer').addClass('border');
 
         // Note the if/else construct. If the title or content of the new post is empty, then an alerty will be triggered
     	if ($('#title').val() && $('#content').val() && $('#mood').val()){
@@ -136,10 +137,10 @@ window.BlogView = Backbone.View.extend({
             var timeNow = new Date();
             var formattedTime = timeNow.getHours() + ":" + timeNow.getMinutes() + ":" + timeNow.getSeconds() + " on " + timeNow.getDate() + "-" + timeNow.getMonth() + "-" + timeNow.getFullYear();
     	    var newPost = new Post({ title: $('#title').val(),
-                                    content: $('#content').val(),
-                                    time: formattedTime, 
-                                    mood: currentMood,
-                                    backgroundColor: $('#backgroundColor').val() });
+                                     content: $('#content').val(),
+                                     time: formattedTime, 
+                                     mood: currentMood,
+                                     backgroundColor: $('#backgroundColor').val() });
     	    this.collection.add(newPost);
     	} else {
     	    alert("Try again! Your post must have a title, content, and an associated mood.");
