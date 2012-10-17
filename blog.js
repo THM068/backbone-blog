@@ -31,10 +31,10 @@ window.PostView = Backbone.View.extend({
 
     // Upon initialization, all of the possible events that interact with posts are identified and bound to the view model
 	initialize: function(){
-		_.bindAll(this, "render", "unrender", "change", "deletePost", "addPost");
 		
         // Upon any change introduced into any post, that post will be re-rendered
-        this.model.bind("change", this.render);
+        this.model.on("change", this.render, this);
+        this.model.on("change", this.render, this);
 	},
 
     // Here, I specify which functions are called in response to specific events
@@ -98,19 +98,19 @@ window.BlogView = Backbone.View.extend({
     },
  
     initialize: function (){
-    	_.bindAll(this, "render", "deletePost", "addPost", "appendPost");
         
         // Without this step, there's no initial collection to render!
         this.collection = new Blog();
         
         // When a new post is added, it needs to be appended to the collection
-        this.collection.bind("add", this.appendPost);
-        this.collection.bind("change", this.render);
+        this.collection.on("add", this.appendPost, this);
+        this.collection.on("change", this.render, this);
         this.render();
         // this.collection.fetch();
     },
  
     // Here is where Underscore becomes really useful. The _.each method enables me to render all of the specific post views at once
+    // ## render is not doing anything yet until edit or a storage is added. ##
     render: function (){
         var that = this;
         _.each(this.collection.models, function (post) {
