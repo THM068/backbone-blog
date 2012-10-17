@@ -7,28 +7,38 @@
 </head>
 
 <body>
+<div id="container">
+    <h1>My Backbone Blog Engine</h1>
+    <p class="caption">Check out the source code on <a href="https://github.com/lucperkins/backbone-blog">GitHub</a></p>
 
-<h1>My Backbone Blog Engine</h1>
-<p class="caption">Check out the source code on <a href="https://github.com/lucperkins/backbone-blog">GitHub</a></p>
-<br />
+    <div id="posts">
+        <form id="newPost">
+            <p>
+            <label for="title">Title:</label>
+            <input id="title" />
+            </p>
+            <p>
+            <label for="mood">Current Mood:</label>
+            <input id="mood"/>
+            </p>
+            <p>
+            <label for="content">Content:</label>
+            <textarea id="content"></textarea>
+            </p>
+            <p>
+            <label for="backgroundColor">Background Color:</label>
+            <select id="backgroundColor">
+                <option value="white">White</option>
+                <option value="lavender">Lavender</option>
+                <option value="teal">Teal</option>
+                <option value="beige">Beige</option>
+            </select>
+            </p>
+            <button class="saveButton">Save</button><br />
+        </form>
+    </div>
 
-<div id="posts">
-	<form id="newPost">
-		Title:<br /><input id="title" size="60" /><br /><br />
-		Content:<br /></label><textarea cols="60" rows="20" id="content"></textarea><br />
-		Current mood:<br /><input id="mood" size="60" /><br /><br />
-		Background color:<br />
-			<select id="backgroundColor">
-				<option value="white">White</option>
-				<option value="lavender">Lavender</option>
-				<option value="teal">Teal</option>
-				<option value="beige">Beige</option>
-			</select>
-		<br /><br />
-		<button class="saveButton">Save</button><br />
-	</form>
-	
-	<div id="postsContainer"></div>
+    <div id="postsContainer"></div>
 </div>
 
 <!-- <button id="saveAll" onClick="saveAllToDb()">Save all to disk</button> -->
@@ -54,17 +64,13 @@
 </div>
 </script>
 
-<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
-<script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
-<script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
-<script src="https://raw.github.com/jeromegn/Backbone.localStorage/master/backbone.localStorage.js"></script>
-<script src="https://raw.github.com/derickbailey/backbone.syphon/master/lib/backbone.syphon.min.js"></script>
-<!-- Finally, I call my own self-made .js file that will make my app run -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.syphon/0.3.0/backbone.syphon.min.js"></script>
 <script src="blog.js"></script>
-<script src="farbtastic.js"></script>
-<!-- <script src="bootstrap.min.js"></script> -->
 
 </body>
 </html>
