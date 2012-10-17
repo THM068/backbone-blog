@@ -2,23 +2,29 @@ body {
 	background-image: url('http://www.publicdomainpictures.net/pictures/20000/velka/blurred-golden-background-11289575386nW6.jpg');
 	background-size: 100%;
 	font-family: Verdana;
-	padding: 50px;
+	padding: 25px;
+}
+
+#container { 
+    width:960px;
+    margin:0 auto;
+    position:relative;
+}
+
+#posts { 
+    float:left;
+    width:400px;
 }
 
 #newPost {
-	margin: 0 auto;
-	float: left;
-	padding-right: 30px;	
-	position: relative;
+    margin-right:20px;
 }
 
 #postsContainer {
-	vertical-align: top;
 	float: left;
-	position: relative;
 	max-height: 600px;
-	width: 700px;
-	overflow: scroll;
+    width:540px;
+	overflow: auto;
 }
 
 .border {
@@ -42,3 +48,24 @@ body {
 	margin-left: 0px auto;
 	margin-right: 0px auto;
 }
+
+select { 
+    display:block;
+    margin:5px 0;
+}
+
+input { 
+    margin:5px 0;
+    display:block;
+    width:200px;
+    border-radius:3px;
+
+}
+
+textarea { 
+    margin:5px 0;
+    display:block;
+    height:200px;
+    width:350px;
+}
+
